@@ -1,0 +1,49 @@
+this file is dedicated to all things i could have done in this project but due to lack of time and not much experience
+i failed.
+
+-Fatemeh Javadi, 12/27/2021
+------------------------------------------
+1 - 'messenger' module
+    lines: 15 to 18
+    (((d = input('give an index to open the message or D/d for deleting ')
+            num_format = re.compile(r'^\-?[0-9][0-9]*$')
+            it_is = re.match(num_format, d)
+            if it_is:)))
+
+     -this part can get better if be replaced with try except. also adding a logging code to save errors caused by a non integer
+     input could be make it perfect. so the reconsideration would be like:
+
+     from logging_module import *
+
+     d = input('give an index to open the message or D/d for deleting ')
+     try:
+       d = int(d)
+       ...rest of the code
+    except Exception:
+        logger.error('a message')
+---------------------------------------------
+2- locking username account after 3 unsuccessful attempts
+    -menu that i wrote cannot handle this feature, how it works? if you fail at log in, the whole menu will start over
+again! it's like getting out of program and trying to open it once again.
+also, Register module should be edited(like adding some variables or ... donno, didn't focus on this part)
+---------------------------------------------
+3- 'messenger' module
+    -file handling in methods are not done very clean, that's why i used absolute addressing
+    -also this module is very chaotic
+---------------------------------------------
+4- weak commenting
+    -needed to comment on everything but not done well
+---------------------------------------------
+5- terrible variable naming
+    -yeah i know, that's obvious
+---------------------------------------------
+6- 'Register' module
+    line: 27 to 29
+        if len(d) >= 1:
+        print('logged in! ')
+        logger.info(f'{self.username} logged in')
+this part will make trouble, if u enter someone else's password, u will log in ://///
+need to catch the number of specific row and match it with the next column
+
+
+
